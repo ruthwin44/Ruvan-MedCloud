@@ -107,7 +107,7 @@ export default function Home() {
               <span className="text-blue-400">Premium Equipment</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              RUVAN MEDCLOUD delivers cutting-edge medical devices and equipment to healthcare facilities worldwide, ensuring superior patient care.
+              Ruvan Medcloud delivers cutting-edge medical devices and equipment to healthcare facilities worldwide, ensuring superior patient care.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link href="/products">

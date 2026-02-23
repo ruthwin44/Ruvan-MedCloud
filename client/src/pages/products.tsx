@@ -38,12 +38,18 @@ export default function Products() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Our Catalog</span>
-            <h1 className="text-3xl md:text-4xl font-bold mt-3 tracking-tight" data-testid="text-products-title">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Our Catalog
+            </span>
+            <h1
+              className="text-3xl md:text-4xl font-bold mt-3 tracking-tight"
+              data-testid="text-products-title"
+            >
               Medical Equipment Products
             </h1>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
-              Browse our comprehensive catalog of premium medical equipment from world-renowned manufacturers.
+              Our catalog of premium medical equipment from world-renowned
+              manufacturers.
             </p>
           </motion.div>
         </div>
@@ -66,7 +72,10 @@ export default function Products() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                 >
-                  <Card className="group hover-elevate h-full flex flex-col overflow-hidden" data-testid={`card-product-${product.id}`}>
+                  <Card
+                    className="group hover-elevate h-full flex flex-col overflow-hidden"
+                    data-testid={`card-product-${product.id}`}
+                  >
                     <div className="p-5 flex flex-col flex-1 bg-gradient-to-b from-card to-card/80">
                       <Badge
                         variant="secondary"
@@ -74,7 +83,10 @@ export default function Products() {
                       >
                         {product.category}
                       </Badge>
-                      <h3 className="font-semibold text-lg mb-2" data-testid={`text-product-name-${product.id}`}>
+                      <h3
+                        className="font-semibold text-lg mb-2"
+                        data-testid={`text-product-name-${product.id}`}
+                      >
                         {product.name}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed flex-1">
@@ -99,7 +111,9 @@ export default function Products() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <h3 className="font-semibold text-lg mb-2">No Products Available</h3>
+              <h3 className="font-semibold text-lg mb-2">
+                No Products Available
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Please check back soon for our latest product offerings.
               </p>

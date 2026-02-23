@@ -52,7 +52,7 @@ const milestones = [
     year: "2009",
     title: "Company Founded",
     description:
-      "RUVAN MEDCLOUD was established with a mission to make premium medical equipment accessible to healthcare facilities worldwide.",
+      "Ruvan Medcloud was established with a mission to make premium medical equipment accessible to healthcare facilities worldwide.",
   },
   {
     year: "2012",
@@ -108,7 +108,7 @@ export default function About() {
               Committed to Healthcare Excellence
             </h1>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
-              For over 15 years, RUVAN MEDCLOUD has been the trusted partner for
+              For over 15 years, Ruvan Medcloud has been the trusted partner for
               healthcare facilities seeking premium medical equipment.
             </p>
           </motion.div>
@@ -122,7 +122,7 @@ export default function About() {
               <div className="relative rounded-xl overflow-hidden h-80 md:h-96">
                 <img
                   src="/images/about-team.png"
-                  alt="RUVAN MEDCLOUD Team"
+                  alt="Ruvan Medcloud Team"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -137,7 +137,7 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Founded in 2009, RUVAN MEDCLOUD began with a simple mission: to
+                Founded in 2009, Ruvan Medcloud began with a simple mission: to
                 make premium medical equipment accessible to healthcare
                 facilities of all sizes. What started as a small local
                 distributor has grown into an internationally recognized partner
@@ -310,7 +310,7 @@ export default function About() {
               Partner With Us
             </h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Join over 200 healthcare facilities that trust RUVAN MEDCLOUD for
+              Join over 200 healthcare facilities that trust Ruvan Medcloud for
               their medical equipment needs.
             </p>
             <Link href="/contact">
