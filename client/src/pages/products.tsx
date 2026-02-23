@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import type { Product } from "@shared/schema";
 
 const categoryColors: Record<string, string> = {
-  "Digital Health": "bg-orange-100 text-orange-800 border-orange-200",
-  "Surgical Equipment": "bg-orange-100 text-orange-800 border-orange-200",
-  "Respiratory Care": "bg-orange-100 text-orange-800 border-orange-200",
+  "Digital Health": "bg-orange-100 text-gray-900 border-orange-200",
+  "Surgical Equipment": "bg-orange-100 text-gray-900 border-orange-200",
+  "Respiratory Care": "bg-orange-100 text-gray-900 border-orange-200",
 };
 
 function ProductSkeleton() {
@@ -96,7 +96,7 @@ export default function Products() {
                           {product.features.slice(0, 4).map((feature) => (
                             <span
                               key={feature}
-                              className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-gray-900 font-medium"
+                              className="text-xs px-2 py-0.5 rounded-full border border-orange-400 text-gray-900 font-medium"
                             >
                               {feature}
                             </span>
