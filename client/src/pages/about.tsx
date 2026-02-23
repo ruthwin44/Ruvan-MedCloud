@@ -95,7 +95,6 @@ export default function About() {
       </section>
 
       <section className="py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-orange-100 via-card to-orange-50" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <motion.div {...fadeInUp}>
