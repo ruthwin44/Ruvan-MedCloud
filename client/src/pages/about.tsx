@@ -63,42 +63,24 @@ export default function About() {
               className="text-3xl md:text-4xl font-bold mt-3 tracking-tight"
               data-testid="text-about-title"
             >
-              Committed to Healthcare Excellence
+              Our Story
             </h1>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
-              Since 2021, Ruvan Medcloud has been the trusted partner for
-              healthcare facilities seeking premium medical equipment.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div className="space-y-6 max-w-3xl mx-auto" {...fadeInUp}>
-            <h2
-              className="text-2xl md:text-3xl font-bold tracking-tight"
-              data-testid="text-story-title"
-            >
-              Our Story
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
               Founded in 2021, Ruvan Medcloud began with a simple mission: to
-              make premium medical equipment accessible to healthcare
-              facilities of all sizes. What started as a small local
-              distributor has grown into an internationally recognized partner
-              for hospitals, clinics, and laboratories.
+              make premium medical equipment accessible to healthcare facilities
+              of all sizes. What started as a small local distributor has grown
+              into an internationally recognized partner for hospitals, clinics,
+              and laboratories.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Today, we serve over 200 hospitals across 30+ countries,
-              offering a catalog of 500+ carefully curated medical devices
-              from the world's most trusted manufacturers. Our team of experts
-              ensures every product meets rigorous quality standards before
-              reaching your facility.
+            <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
+              Today, we serve over 50 hospitals across 30+ cities, offering
+              curated medical devices from the world's most trusted
+              manufacturers. Our team of experts ensures every product meets
+              rigorous quality standards before reaching your facility.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 gap-4 pt-4">
               {[
-                "ISO 9001 Certified",
+                "ISO 9001:2015 Certified",
                 "24/7 Technical Support",
                 "Global Logistics Network",
               ].map((item) => (

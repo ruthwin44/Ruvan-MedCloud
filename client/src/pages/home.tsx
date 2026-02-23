@@ -53,8 +53,8 @@ const categories = [
 ];
 
 const stats = [
-  { value: "10+", label: "Products", icon: Package },
-  { value: "20+", label: "Medical Institutions Served", icon: Users },
+  { value: "20+", label: "Products", icon: Package },
+  { value: "50+", label: "Medical Institutions Served", icon: Users },
 ];
 
 const features = [
