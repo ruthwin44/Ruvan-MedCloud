@@ -8,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
-            <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
+            <img src={logoImage} alt="Ruvan Medcloud" className="h-20 w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your trusted partner for premium medical equipment distribution. We provide cutting-edge healthcare solutions to facilities worldwide.
             </p>
@@ -36,21 +36,21 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-sm uppercase tracking-wider">Contact Info</h3>
             <div className="flex flex-col gap-3">
-              <a href="tel:+1234567890" className="flex items-start gap-2.5 text-sm text-muted-foreground" data-testid="link-footer-phone">
+              <a href="tel:+91994536616" className="flex items-start gap-2.5 text-sm text-muted-foreground" data-testid="link-footer-phone">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>+1 (234) 567-890</span>
+                <span>+91 99453 66616</span>
               </a>
-              <a href="mailto:info@ruvanmedcloud.com" className="flex items-start gap-2.5 text-sm text-muted-foreground" data-testid="link-footer-email">
+              <a href="mailto:ruvanpvtltd@gmail.com" className="flex items-start gap-2.5 text-sm text-muted-foreground" data-testid="link-footer-email">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>info@ruvanmedcloud.com</span>
+                <span>ruvanpvtltd@gmail.com</span>
               </a>
               <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>123 Medical Drive, Suite 100<br />Healthcare City, HC 10001</span>
+                <span>NO.10, 12(3479), 1st Floor, 1st Cross,<br />C Block, Gayathrinagar,<br />Bangalore, Karnataka, India - 560021</span>
               </div>
               <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+                <span>Mon - Sat: 10:00 AM - 6:00 PM</span>
               </div>
             </div>
           </div>
@@ -58,10 +58,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Ruvan Medcloud. All rights reserved.
+            &copy; {new Date().getFullYear()} Ruvan Medcloud Pvt Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-sm text-muted-foreground">ISO 13485 Certified</span>
+            <span className="text-sm text-muted-foreground">ISO 9001 Certified</span>
           </div>
         </div>
       </div>

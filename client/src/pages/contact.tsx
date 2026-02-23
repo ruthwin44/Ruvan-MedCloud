@@ -2,41 +2,34 @@ import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, ease: "easeOut" },
-};
-
 const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (234) 567-890",
-    href: "tel:+1234567890",
+    value: "+91 99453 66616",
+    href: "tel:+91994536616",
     gradient: "from-blue-500/15 to-cyan-500/15",
     iconColor: "text-blue-500",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@ruvanmedcloud.com",
-    href: "mailto:info@ruvanmedcloud.com",
+    value: "ruvanpvtltd@gmail.com",
+    href: "mailto:ruvanpvtltd@gmail.com",
     gradient: "from-violet-500/15 to-purple-500/15",
     iconColor: "text-violet-500",
   },
   {
     icon: MapPin,
     title: "Address",
-    value: "123 Medical Drive, Suite 100\nHealthcare City, HC 10001",
+    value: "NO.10, 12(3479), 1st Floor, 1st Cross,\nC Block, Gayathrinagar,\nBangalore, Karnataka, India - 560021",
     gradient: "from-emerald-500/15 to-teal-500/15",
     iconColor: "text-emerald-500",
   },
   {
     icon: Clock,
     title: "Business Hours",
-    value: "Monday - Friday\n8:00 AM - 6:00 PM",
+    value: "Monday - Saturday\n10:00 AM - 6:00 PM",
     gradient: "from-amber-500/15 to-orange-500/15",
     iconColor: "text-amber-500",
   },
@@ -102,7 +95,6 @@ export default function Contact() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
     </div>

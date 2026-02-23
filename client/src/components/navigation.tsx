@@ -28,13 +28,13 @@ export function Navigation() {
       <div className="hidden md:block bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-6 flex-wrap">
-            <a href="tel:+1234567890" className="flex items-center gap-1.5 opacity-90" data-testid="link-phone-top">
+            <a href="tel:+91994536616" className="flex items-center gap-1.5 opacity-90" data-testid="link-phone-top">
               <Phone className="w-3.5 h-3.5" />
-              <span>+1 (234) 567-890</span>
+              <span>+91 99453 66616</span>
             </a>
-            <a href="mailto:info@ruvanmedcloud.com" className="flex items-center gap-1.5 opacity-90" data-testid="link-email-top">
+            <a href="mailto:ruvanpvtltd@gmail.com" className="flex items-center gap-1.5 opacity-90" data-testid="link-email-top">
               <Mail className="w-3.5 h-3.5" />
-              <span>info@ruvanmedcloud.com</span>
+              <span>ruvanpvtltd@gmail.com</span>
             </a>
           </div>
           <span className="opacity-75 hidden lg:block">Trusted Medical Equipment Distribution</span>
@@ -48,9 +48,9 @@ export function Navigation() {
             : "bg-background border-b"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4 h-16 md:h-18">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4 h-20 md:h-24">
           <Link href="/" data-testid="link-logo">
-            <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
+            <img src={logoImage} alt="Ruvan Medcloud" className="h-20 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -78,7 +78,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-80 p-0">
               <div className="flex flex-col h-full">
                 <div className="p-6 border-b">
-                  <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
+                  <img src={logoImage} alt="Ruvan Medcloud" className="h-20 w-auto" />
                 </div>
                 <nav className="flex-1 p-4 space-y-1">
                   {navLinks.map((link) => (
@@ -97,13 +97,13 @@ export function Navigation() {
                   ))}
                 </nav>
                 <div className="p-4 border-t space-y-3">
-                  <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-muted-foreground px-4">
+                  <a href="tel:+91994536616" className="flex items-center gap-2 text-sm text-muted-foreground px-4">
                     <Phone className="w-4 h-4" />
-                    +1 (234) 567-890
+                    +91 99453 66616
                   </a>
-                  <a href="mailto:info@ruvanmedcloud.com" className="flex items-center gap-2 text-sm text-muted-foreground px-4">
+                  <a href="mailto:ruvanpvtltd@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground px-4">
                     <Mail className="w-4 h-4" />
-                    info@ruvanmedcloud.com
+                    ruvanpvtltd@gmail.com
                   </a>
                 </div>
               </div>

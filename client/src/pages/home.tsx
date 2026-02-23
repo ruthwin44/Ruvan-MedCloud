@@ -31,51 +31,56 @@ const staggerContainer = {
 const categories = [
   {
     title: "Patient Monitoring",
-    description: "Advanced vital signs monitoring systems for ICU, OR, and general wards.",
+    description:
+      "Advanced vital signs monitoring systems for ICU, OR, and general wards.",
     image: "/images/product-monitoring.png",
     icon: HeartPulse,
   },
   {
     title: "Surgical Instruments",
-    description: "Precision surgical tools and instrument sets for all specialties.",
+    description:
+      "Precision surgical tools and instrument sets for all specialties.",
     image: "/images/product-surgical.png",
     icon: Award,
   },
   {
     title: "Laboratory Equipment",
-    description: "Automated analyzers and diagnostic equipment for clinical labs.",
+    description:
+      "Automated analyzers and diagnostic equipment for clinical labs.",
     image: "/images/product-laboratory.png",
     icon: Package,
   },
 ];
 
 const stats = [
-  { value: "500+", label: "Products", icon: Package },
-  { value: "200+", label: "Hospitals Served", icon: Users },
-  { value: "15+", label: "Years Experience", icon: Star },
-  { value: "30+", label: "Countries", icon: Globe },
+  { value: "10+", label: "Products", icon: Package },
+  { value: "20+", label: "Medical Institutions Served", icon: Users },
 ];
 
 const features = [
   {
     icon: Shield,
     title: "Quality Assured",
-    description: "All products are ISO certified and meet international quality standards for medical equipment.",
+    description:
+      "All products are ISO certified and meet international quality standards for medical equipment.",
   },
   {
     icon: Truck,
     title: "Fast Delivery",
-    description: "Efficient logistics network ensuring timely delivery of equipment to your facility.",
+    description:
+      "Efficient logistics network ensuring timely delivery of equipment to your facility.",
   },
   {
     icon: HeartPulse,
     title: "Expert Support",
-    description: "Dedicated technical support team for installation, training, and after-sales service.",
+    description:
+      "Dedicated technical support team for installation, training, and after-sales service.",
   },
   {
     icon: Award,
     title: "Trusted Brands",
-    description: "Authorized distributor for leading global medical equipment manufacturers.",
+    description:
+      "Authorized distributor for leading global medical equipment manufacturers.",
   },
 ];
 
@@ -102,22 +107,36 @@ export default function Home() {
               <HeartPulse className="w-4 h-4" />
               Trusted Medical Equipment Partner
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight" data-testid="text-hero-title">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
+              data-testid="text-hero-title"
+            >
               Advancing Healthcare Through{" "}
               <span className="text-blue-400">Premium Equipment</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              Ruvan Medcloud delivers cutting-edge medical devices and equipment to healthcare facilities worldwide, ensuring superior patient care.
+              Ruvan Medcloud delivers cutting-edge medical devices and equipment
+              to healthcare facilities worldwide, ensuring superior patient
+              care.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link href="/products">
-                <Button size="lg" className="bg-white text-gray-900 font-semibold" data-testid="button-hero-products">
+                <Button
+                  size="lg"
+                  className="bg-white text-gray-900 font-semibold"
+                  data-testid="button-hero-products"
+                >
                   Explore Products
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white/30 text-white backdrop-blur-sm bg-white/5" data-testid="button-hero-contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white backdrop-blur-sm bg-white/5"
+                  data-testid="button-hero-contact"
+                >
                   Contact Us
                 </Button>
               </Link>
@@ -128,7 +147,7 @@ export default function Home() {
 
       <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-6 w-full">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={staggerContainer}
           initial="initial"
           whileInView="whileInView"
@@ -143,10 +162,17 @@ export default function Home() {
               }}
               transition={{ duration: 0.4 }}
             >
-              <Card className="p-5 text-center bg-background/95 backdrop-blur-sm" data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-                <div className="text-2xl md:text-3xl font-bold tracking-tight">{stat.value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+              <Card
+                className="p-8 text-center bg-background/95 backdrop-blur-sm"
+                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl md:text-4xl font-bold tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-base text-muted-foreground mt-2">
+                  {stat.label}
+                </div>
               </Card>
             </motion.div>
           ))}
@@ -155,13 +181,22 @@ export default function Home() {
 
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div className="text-center max-w-2xl mx-auto mb-14" {...fadeInUp}>
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Our Products</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 tracking-tight" data-testid="text-categories-title">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-14"
+            {...fadeInUp}
+          >
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Our Products
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mt-3 tracking-tight"
+              data-testid="text-categories-title"
+            >
               Medical Equipment Categories
             </h2>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              We offer a comprehensive range of premium medical equipment across all major categories to serve your healthcare facility needs.
+              We offer a comprehensive range of premium medical equipment across
+              all major categories to serve your healthcare facility needs.
             </p>
           </motion.div>
 
@@ -175,7 +210,10 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Link href="/products">
-                  <Card className="group cursor-pointer relative h-72 md:h-80" data-testid={`card-category-${category.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Card
+                    className="group cursor-pointer relative h-72 md:h-80"
+                    data-testid={`card-category-${category.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
                     <img
                       src={category.image}
                       alt={category.title}
@@ -187,9 +225,13 @@ export default function Home() {
                         <div className="w-10 h-10 rounded-md bg-white/15 backdrop-blur-sm flex items-center justify-center">
                           <category.icon className="w-5 h-5 text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+                        <h3 className="text-xl font-semibold text-white">
+                          {category.title}
+                        </h3>
                       </div>
-                      <p className="text-white/75 text-sm leading-relaxed">{category.description}</p>
+                      <p className="text-white/75 text-sm leading-relaxed">
+                        {category.description}
+                      </p>
                       <div className="flex items-center gap-1.5 mt-3 text-sm font-medium text-blue-300 group-hover:gap-2.5 transition-all">
                         View Products <ArrowRight className="w-4 h-4" />
                       </div>
@@ -205,13 +247,22 @@ export default function Home() {
       <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-card to-accent/10" />
         <div className="relative max-w-7xl mx-auto px-6">
-          <motion.div className="text-center max-w-2xl mx-auto mb-14" {...fadeInUp}>
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 tracking-tight" data-testid="text-features-title">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-14"
+            {...fadeInUp}
+          >
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Why Choose Us
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold mt-3 tracking-tight"
+              data-testid="text-features-title"
+            >
               Your Trusted Medical Equipment Partner
             </h2>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              We are committed to delivering excellence in medical equipment distribution with unmatched service quality.
+              We are committed to delivering excellence in medical equipment
+              distribution with unmatched service quality.
             </p>
           </motion.div>
 
@@ -224,19 +275,25 @@ export default function Home() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="p-6 h-full" data-testid={`card-feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                <Card
+                  className="p-6 h-full"
+                  data-testid={`card-feature-${feature.title.toLowerCase().replace(/\s+/g, "-")}`}
+                >
                   <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
     </div>
   );
 }

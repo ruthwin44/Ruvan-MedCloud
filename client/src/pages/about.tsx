@@ -66,7 +66,7 @@ export default function About() {
               Committed to Healthcare Excellence
             </h1>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
-              For over 15 years, Ruvan Medcloud has been the trusted partner for
+              Since 2021, Ruvan Medcloud has been the trusted partner for
               healthcare facilities seeking premium medical equipment.
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function About() {
               Our Story
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Founded in 2009, Ruvan Medcloud began with a simple mission: to
+              Founded in 2021, Ruvan Medcloud began with a simple mission: to
               make premium medical equipment accessible to healthcare
               facilities of all sizes. What started as a small local
               distributor has grown into an internationally recognized partner
@@ -98,7 +98,7 @@ export default function About() {
             </p>
             <div className="grid grid-cols-2 gap-4 pt-2">
               {[
-                "ISO 13485 Certified",
+                "ISO 9001 Certified",
                 "24/7 Technical Support",
                 "Global Logistics Network",
               ].map((item) => (
