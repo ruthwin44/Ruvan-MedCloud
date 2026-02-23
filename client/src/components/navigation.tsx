@@ -25,7 +25,7 @@ export function Navigation() {
 
   return (
     <>
-      <div className="hidden md:block bg-orange-100 text-orange-800">
+      <div className="hidden md:block border-b text-foreground">
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-6 flex-wrap">
             <a href="tel:+91994536616" className="flex items-center gap-1.5 opacity-90" data-testid="link-phone-top">
