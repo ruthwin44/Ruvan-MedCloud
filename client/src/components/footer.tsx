@@ -1,16 +1,11 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import logoImage from "@assets/RuvanMedcloud_Logo_1771860290852.png";
 
 export function Footer() {
   return (
     <footer className="bg-card border-t">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="space-y-4">
-            <img src={logoImage} alt="Ruvan Medcloud" className="h-20 w-auto" />
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="space-y-4">
             <h3 className="font-semibold text-sm uppercase tracking-wider">
               Quick Links
