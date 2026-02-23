@@ -1,8 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
 import {
-  ChevronRight,
   Target,
   Eye,
   Users,
@@ -47,45 +44,6 @@ const values = [
   },
 ];
 
-const milestones = [
-  {
-    year: "2009",
-    title: "Company Founded",
-    description:
-      "Ruvan Medcloud was established with a mission to make premium medical equipment accessible to healthcare facilities worldwide.",
-  },
-  {
-    year: "2012",
-    title: "International Expansion",
-    description:
-      "Expanded operations to serve healthcare providers across 10 countries with a growing catalog of medical devices.",
-  },
-  {
-    year: "2015",
-    title: "ISO 13485 Certification",
-    description:
-      "Achieved ISO 13485 certification, demonstrating our commitment to quality management in medical device distribution.",
-  },
-  {
-    year: "2018",
-    title: "200+ Hospital Partners",
-    description:
-      "Reached the milestone of partnering with over 200 hospitals and clinics, solidifying our position as a trusted distributor.",
-  },
-  {
-    year: "2021",
-    title: "Digital Transformation",
-    description:
-      "Launched our digital platform to streamline ordering, tracking, and support for healthcare facilities globally.",
-  },
-  {
-    year: "2024",
-    title: "Global Leadership",
-    description:
-      "Recognized as a global leader in medical equipment distribution, serving 30+ countries with 500+ products.",
-  },
-];
-
 export default function About() {
   return (
     <div className="flex flex-col">
@@ -117,54 +75,40 @@ export default function About() {
 
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fadeInUp}>
-              <div className="relative rounded-xl overflow-hidden h-80 md:h-96">
-                <img
-                  src="/images/about-team.png"
-                  alt="Ruvan Medcloud Team"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </div>
-            </motion.div>
-
-            <motion.div className="space-y-6" {...fadeInUp}>
-              <h2
-                className="text-2xl md:text-3xl font-bold tracking-tight"
-                data-testid="text-story-title"
-              >
-                Our Story
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Founded in 2009, Ruvan Medcloud began with a simple mission: to
-                make premium medical equipment accessible to healthcare
-                facilities of all sizes. What started as a small local
-                distributor has grown into an internationally recognized partner
-                for hospitals, clinics, and laboratories.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Today, we serve over 200 hospitals across 30+ countries,
-                offering a catalog of 500+ carefully curated medical devices
-                from the world's most trusted manufacturers. Our team of experts
-                ensures every product meets rigorous quality standards before
-                reaching your facility.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-2">
-                {[
-                  "ISO 13485 Certified",
-                  "FDA Registered",
-                  "24/7 Technical Support",
-                  "Global Logistics Network",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+          <motion.div className="space-y-6 max-w-3xl mx-auto" {...fadeInUp}>
+            <h2
+              className="text-2xl md:text-3xl font-bold tracking-tight"
+              data-testid="text-story-title"
+            >
+              Our Story
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Founded in 2009, Ruvan Medcloud began with a simple mission: to
+              make premium medical equipment accessible to healthcare
+              facilities of all sizes. What started as a small local
+              distributor has grown into an internationally recognized partner
+              for hospitals, clinics, and laboratories.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Today, we serve over 200 hospitals across 30+ countries,
+              offering a catalog of 500+ carefully curated medical devices
+              from the world's most trusted manufacturers. Our team of experts
+              ensures every product meets rigorous quality standards before
+              reaching your facility.
+            </p>
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              {[
+                "ISO 13485 Certified",
+                "24/7 Technical Support",
+                "Global Logistics Network",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -248,82 +192,6 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center max-w-2xl mx-auto mb-14"
-            {...fadeInUp}
-          >
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              Our Journey
-            </span>
-            <h2
-              className="text-2xl md:text-3xl font-bold mt-3 tracking-tight"
-              data-testid="text-timeline-title"
-            >
-              Company Milestones
-            </h2>
-          </motion.div>
-
-          <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-            {milestones.map((milestone, i) => (
-              <motion.div
-                key={milestone.year}
-                className={`relative flex items-start gap-6 mb-10 ${
-                  i % 2 === 0
-                    ? "md:flex-row md:text-right"
-                    : "md:flex-row-reverse md:text-left"
-                }`}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="hidden md:block flex-1" />
-                <div className="relative z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                  <div className="w-3 h-3 rounded-full bg-primary-foreground" />
-                </div>
-                <div className="flex-1 pb-2">
-                  <span className="text-sm font-medium text-primary">
-                    {milestone.year}
-                  </span>
-                  <h3 className="font-semibold mt-1">{milestone.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {milestone.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-              Partner With Us
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              Join over 200 healthcare facilities that trust Ruvan Medcloud for
-              their medical equipment needs.
-            </p>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                className="mt-6"
-                data-testid="button-about-contact"
-              >
-                Get in Touch
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>

@@ -8,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
-            <img src={logoImage} alt="Ruvan Medcloud" className="h-10 w-auto" />
+            <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your trusted partner for premium medical equipment distribution. We provide cutting-edge healthcare solutions to facilities worldwide.
             </p>
@@ -62,7 +62,6 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <span className="text-sm text-muted-foreground">ISO 13485 Certified</span>
-            <span className="text-sm text-muted-foreground">FDA Registered</span>
           </div>
         </div>
       </div>

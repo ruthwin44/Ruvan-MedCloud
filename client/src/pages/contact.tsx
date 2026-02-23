@@ -103,28 +103,6 @@ export default function Contact() {
             ))}
           </div>
 
-          <motion.div
-            className="mt-10"
-            {...fadeInUp}
-          >
-            <Card className="p-8 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 border-primary/15">
-              <div className="text-center">
-                <h3 className="font-semibold text-lg mb-2" data-testid="text-emergency-title">Emergency Equipment Support</h3>
-                <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
-                  For urgent equipment issues, our 24/7 technical support line is available around the clock.
-                </p>
-                <a
-                  href="tel:+1234567899"
-                  className="inline-flex items-center gap-2 text-lg font-semibold text-primary"
-                  data-testid="link-emergency-phone"
-                >
-                  <Phone className="w-5 h-5" />
-                  +1 (234) 567-899
-                </a>
-                <p className="text-xs text-muted-foreground mt-1">24/7 Hotline</p>
-              </div>
-            </Card>
-          </motion.div>
         </div>
       </section>
     </div>

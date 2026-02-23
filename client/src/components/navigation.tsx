@@ -50,7 +50,7 @@ export function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4 h-16 md:h-18">
           <Link href="/" data-testid="link-logo">
-            <img src={logoImage} alt="Ruvan Medcloud" className="h-10 w-auto" />
+            <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -78,7 +78,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-80 p-0">
               <div className="flex flex-col h-full">
                 <div className="p-6 border-b">
-                  <img src={logoImage} alt="Ruvan Medcloud" className="h-10 w-auto" />
+                  <img src={logoImage} alt="Ruvan Medcloud" className="h-14 w-auto" />
                 </div>
                 <nav className="flex-1 p-4 space-y-1">
                   {navLinks.map((link) => (
