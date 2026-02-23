@@ -47,6 +47,45 @@ const values = [
   },
 ];
 
+const milestones = [
+  {
+    year: "2009",
+    title: "Company Founded",
+    description:
+      "RUVAN MEDCLOUD was established with a mission to make premium medical equipment accessible to healthcare facilities worldwide.",
+  },
+  {
+    year: "2012",
+    title: "International Expansion",
+    description:
+      "Expanded operations to serve healthcare providers across 10 countries with a growing catalog of medical devices.",
+  },
+  {
+    year: "2015",
+    title: "ISO 13485 Certification",
+    description:
+      "Achieved ISO 13485 certification, demonstrating our commitment to quality management in medical device distribution.",
+  },
+  {
+    year: "2018",
+    title: "200+ Hospital Partners",
+    description:
+      "Reached the milestone of partnering with over 200 hospitals and clinics, solidifying our position as a trusted distributor.",
+  },
+  {
+    year: "2021",
+    title: "Digital Transformation",
+    description:
+      "Launched our digital platform to streamline ordering, tracking, and support for healthcare facilities globally.",
+  },
+  {
+    year: "2024",
+    title: "Global Leadership",
+    description:
+      "Recognized as a global leader in medical equipment distribution, serving 30+ countries with 500+ products.",
+  },
+];
+
 export default function About() {
   return (
     <div className="flex flex-col">
@@ -229,7 +268,39 @@ export default function About() {
             </h2>
           </motion.div>
 
-         
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+            {milestones.map((milestone, i) => (
+              <motion.div
+                key={milestone.year}
+                className={`relative flex items-start gap-6 mb-10 ${
+                  i % 2 === 0
+                    ? "md:flex-row md:text-right"
+                    : "md:flex-row-reverse md:text-left"
+                }`}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="hidden md:block flex-1" />
+                <div className="relative z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                  <div className="w-3 h-3 rounded-full bg-primary-foreground" />
+                </div>
+                <div className="flex-1 pb-2">
+                  <span className="text-sm font-medium text-primary">
+                    {milestone.year}
+                  </span>
+                  <h3 className="font-semibold mt-1">{milestone.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {milestone.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10" />
