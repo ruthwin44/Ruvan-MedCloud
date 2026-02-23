@@ -2,10 +2,12 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
-import { spawn } from "child_process";
+import { seedDatabase } from "./seed";
 
 const app = express();
 const httpServer = createServer(app);
+
+app.use(express.json());
 
 declare module "http" {
   interface IncomingMessage {
@@ -24,45 +26,8 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
-function startFlaskServer() {
-  const isProd = process.env.NODE_ENV === "production";
-  log("Starting Flask backend on port 5001...", "flask");
-
-  const cmd = isProd ? "gunicorn" : "python";
-  const args = isProd
-    ? ["--bind", "0.0.0.0:5001", "--workers", "2", "server_py.app:app"]
-    : ["-m", "server_py.app"];
-
-  const flask = spawn(cmd, args, {
-    env: { ...process.env, PORT: "5001", NODE_ENV: process.env.NODE_ENV || "development" },
-    stdio: ["ignore", "pipe", "pipe"],
-  });
-
-  flask.stdout.on("data", (data: Buffer) => {
-    const lines = data.toString().trim().split("\n");
-    for (const line of lines) {
-      if (line.trim()) log(line.trim(), "flask");
-    }
-  });
-
-  flask.stderr.on("data", (data: Buffer) => {
-    const lines = data.toString().trim().split("\n");
-    for (const line of lines) {
-      if (line.trim()) log(line.trim(), "flask");
-    }
-  });
-
-  flask.on("close", (code: number | null) => {
-    log(`Flask process exited with code ${code}`, "flask");
-  });
-
-  return flask;
-}
-
 (async () => {
-  const flaskProcess = startFlaskServer();
-
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await seedDatabase();
 
   await registerRoutes(httpServer, app);
 
@@ -123,8 +88,4 @@ function startFlaskServer() {
       log(`serving on port ${port}`);
     },
   );
-
-  process.on("exit", () => {
-    flaskProcess.kill();
-  });
 })();

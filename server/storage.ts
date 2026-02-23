@@ -1,30 +1,19 @@
-import {
-  type Product,
-  type InsertProduct,
-  type ContactSubmission,
-  type InsertContact,
-  products,
-  contactSubmissions,
-} from "@shared/schema";
 import { db } from "./db";
+import { products, contactSubmissions } from "@shared/schema";
+import type { Product, InsertProduct, ContactSubmission, InsertContact } from "@shared/schema";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getProducts(): Promise<Product[]>;
-  getProductsByCategory(category: string): Promise<Product[]>;
   getProduct(id: number): Promise<Product | undefined>;
-  createProduct(product: InsertProduct): Promise<Product>;
-  createContactSubmission(contact: InsertContact): Promise<ContactSubmission>;
+  getProductsByCategory(category: string): Promise<Product[]>;
+  createContactSubmission(data: InsertContact): Promise<ContactSubmission>;
   getContactSubmissions(): Promise<ContactSubmission[]>;
 }
 
 export class DatabaseStorage implements IStorage {
   async getProducts(): Promise<Product[]> {
-    return db.select().from(products);
-  }
-
-  async getProductsByCategory(category: string): Promise<Product[]> {
-    return db.select().from(products).where(eq(products.category, category));
+    return await db.select().from(products);
   }
 
   async getProduct(id: number): Promise<Product | undefined> {
@@ -32,18 +21,17 @@ export class DatabaseStorage implements IStorage {
     return product;
   }
 
-  async createProduct(product: InsertProduct): Promise<Product> {
-    const [created] = await db.insert(products).values(product).returning();
-    return created;
+  async getProductsByCategory(category: string): Promise<Product[]> {
+    return await db.select().from(products).where(eq(products.category, category));
   }
 
-  async createContactSubmission(contact: InsertContact): Promise<ContactSubmission> {
-    const [created] = await db.insert(contactSubmissions).values(contact).returning();
-    return created;
+  async createContactSubmission(data: InsertContact): Promise<ContactSubmission> {
+    const [submission] = await db.insert(contactSubmissions).values(data).returning();
+    return submission;
   }
 
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return db.select().from(contactSubmissions);
+    return await db.select().from(contactSubmissions);
   }
 }
 

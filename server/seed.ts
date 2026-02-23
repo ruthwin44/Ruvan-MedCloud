@@ -1,34 +1,46 @@
 import { db } from "./db";
 import { products } from "@shared/schema";
+import { sql } from "drizzle-orm";
 
-const seedProducts = [
+const SEED_PRODUCTS = [
   {
-    name: "ProVital 5000 Patient Monitor",
-    description: "Advanced multi-parameter patient monitoring system with 15-inch touchscreen display. Monitors ECG, SpO2, NIBP, temperature, and respiratory rate with real-time trend analysis.",
-    category: "Patient Monitoring",
-    image: "/images/product-monitoring.png",
-    features: ["15-inch Touchscreen", "Multi-parameter", "Wireless Connectivity", "Battery Backup"],
+    name: "Anatomograph",
+    description: "Advanced AI-powered anatomical visualization platform featuring 3D anatomical atlas, DICOM-based 3D model generation, AI segmentation and analysis, and interactive quiz system for medical education and clinical research.",
+    category: "Digital Health",
+    image: "/images/product-anatomograph.png",
+    features: ["3D Anatomical Atlas", "DICOM Viewer", "AI Segmentation", "Medical Education"],
   },
   {
-    name: "CardioTrack Pro ECG System",
-    description: "12-lead diagnostic ECG system with automated interpretation and cloud-based data storage. Features high-resolution waveform display and comprehensive reporting.",
-    category: "Patient Monitoring",
-    image: "/images/product-monitoring.png",
-    features: ["12-Lead ECG", "Auto Interpretation", "Cloud Storage", "PDF Reports"],
+    name: "Staan OT Table Glory",
+    description: "Premium hydraulic surgical operating table with electro-hydraulic positioning, radiolucent tabletop, and modular accessories. Designed for multi-specialty surgical procedures with precise height and tilt adjustments.",
+    category: "Surgical Equipment",
+    image: "/images/product-ot-table.png",
+    features: ["Electro-Hydraulic", "Radiolucent Top", "Multi-Specialty", "Modular Design"],
   },
   {
-    name: "UltraScan HD Ultrasound",
-    description: "Premium portable ultrasound system with crystal-clear imaging for general, cardiac, and OB/GYN applications. Lightweight design with extended battery life.",
-    category: "Diagnostic Imaging",
-    image: "/images/product-imaging.png",
-    features: ["HD Imaging", "Portable Design", "Multi-probe", "8hr Battery"],
+    name: "Staan Discover LED",
+    description: "High-performance surgical LED ceiling light with shadowless illumination, adjustable color temperature, and endoscope mode. Features unique focus technology and ergonomic sterilizable handle for optimal surgical visibility.",
+    category: "Surgical Equipment",
+    image: "/images/product-ot-lights.png",
+    features: ["Shadowless LED", "Color Temperature Control", "Endoscope Mode", "Sterilizable Handle"],
   },
   {
-    name: "DigiRay X500 Digital X-Ray",
-    description: "High-resolution digital radiography system with advanced image processing. Designed for general radiography with exceptional detail and low dose technology.",
-    category: "Diagnostic Imaging",
-    image: "/images/product-imaging.png",
-    features: ["Low Dose", "Digital Processing", "PACS Compatible", "Auto Positioning"],
+    name: "Origin Ventilator",
+    description: "Portable life support ventilator for adult and pediatric patients with both invasive and non-invasive ventilation modes. Features intuitive touchscreen interface, comprehensive alarm management, and extended battery life for transport use.",
+    category: "Respiratory Care",
+    image: "/images/product-ventilator.png",
+    features: ["Invasive & Non-Invasive", "Touchscreen Display", "Portable Design", "Extended Battery"],
   },
-  
+];
+
+export async function seedDatabase() {
+  const result = await db.select({ count: sql<number>`count(*)` }).from(products);
+  const count = Number(result[0].count);
+
+  if (count === 0) {
+    await db.insert(products).values(SEED_PRODUCTS);
+    console.log(`Database seeded with ${SEED_PRODUCTS.length} products`);
+  } else {
+    console.log(`Database already has ${count} products, skipping seed`);
+  }
 }
