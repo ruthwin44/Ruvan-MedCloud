@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logoImage from "@assets/RuvanMedcloud_Logo_1771857148689.png";
 
 export function Footer() {
   return (
@@ -7,15 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">R</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg tracking-tight leading-tight">RUVAN</span>
-                <span className="text-xs text-muted-foreground tracking-widest uppercase leading-tight">MEDCLOUD</span>
-              </div>
-            </div>
+            <img src={logoImage} alt="RUVAN MEDCLOUD" className="h-10 w-auto" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your trusted partner for premium medical equipment distribution. We provide cutting-edge healthcare solutions to facilities worldwide.
             </p>
@@ -34,10 +27,8 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-sm uppercase tracking-wider">Product Categories</h3>
             <nav className="flex flex-col gap-2.5">
-              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Patient Monitoring</Link>
-              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Diagnostic Imaging</Link>
-              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Surgical Instruments</Link>
-              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Laboratory Equipment</Link>
+              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Digital Health</Link>
+              <Link href="/products" className="text-sm text-muted-foreground transition-colors">Surgical Equipment</Link>
               <Link href="/products" className="text-sm text-muted-foreground transition-colors">Respiratory Care</Link>
             </nav>
           </div>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-RUVAN MEDCLOUD is a medical equipment distributor website with a Python Flask backend and React frontend. It showcases premium medical equipment products (patient monitors, imaging systems, surgical instruments, lab equipment, respiratory care) with a product catalog, company information pages, and a contact form. The site is a brochure/lead-generation style application — no authentication, no e-commerce transactions, just product browsing and contact form submissions.
+RUVAN MEDCLOUD is a medical equipment distributor website with a Python Flask backend and React frontend. It showcases 4 specific medical equipment products (Anatomograph, Staan OT Table Glory, Staan Discover LED, Origin Ventilator) with a product catalog, company information pages, and contact information display. The site is a purely informational brochure — no authentication, no e-commerce, no forms or user inputs. Product categories: Digital Health, Surgical Equipment, Respiratory Care. Uses the RUVAN company logo (imported from @assets) in navigation and footer. Gradient styling throughout all pages.
 
 ## User Preferences
 
@@ -48,7 +48,7 @@ The project follows a monorepo layout:
   - `server_py/routes.py` — API route handlers (Blueprint with `/api` prefix)
   - `server_py/storage.py` — Database access functions (CRUD for products and contacts)
   - `server_py/db.py` — PostgreSQL connection utilities, table initialization
-  - `server_py/seed.py` — Seeds database with 12 sample medical equipment products
+  - `server_py/seed.py` — Seeds database with 4 specific medical equipment products (Anatomograph, Staan OT Table Glory, Staan Discover LED, Origin Ventilator)
 - **Runs on port 5001** in development (proxied from Express on port 5000)
 
 ### Dev Proxy (`server/`)

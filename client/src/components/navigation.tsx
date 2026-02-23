@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Phone, Mail, ChevronRight } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
+import logoImage from "@assets/RuvanMedcloud_Logo_1771857148689.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -49,15 +50,7 @@ export function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4 h-16 md:h-18">
           <Link href="/" data-testid="link-logo">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">R</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg tracking-tight leading-tight">RUVAN</span>
-                <span className="text-xs text-muted-foreground tracking-widest uppercase leading-tight">MEDCLOUD</span>
-              </div>
-            </div>
+            <img src={logoImage} alt="RUVAN MEDCLOUD" className="h-10 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -76,15 +69,6 @@ export function Navigation() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="/contact">
-              <Button data-testid="button-get-quote">
-                Get a Quote
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </div>
-
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button size="icon" variant="ghost" data-testid="button-mobile-menu">
@@ -94,15 +78,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-80 p-0">
               <div className="flex flex-col h-full">
                 <div className="p-6 border-b">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                      <span className="text-primary-foreground font-bold text-lg">R</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-bold text-lg tracking-tight leading-tight">RUVAN</span>
-                      <span className="text-xs text-muted-foreground tracking-widest uppercase leading-tight">MEDCLOUD</span>
-                    </div>
-                  </div>
+                  <img src={logoImage} alt="RUVAN MEDCLOUD" className="h-10 w-auto" />
                 </div>
                 <nav className="flex-1 p-4 space-y-1">
                   {navLinks.map((link) => (
@@ -129,12 +105,6 @@ export function Navigation() {
                     <Mail className="w-4 h-4" />
                     info@ruvanmedcloud.com
                   </a>
-                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    <Button className="w-full mt-2" data-testid="button-mobile-quote">
-                      Get a Quote
-                      <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </Link>
                 </div>
               </div>
             </SheetContent>

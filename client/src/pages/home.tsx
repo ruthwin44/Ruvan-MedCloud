@@ -36,12 +36,6 @@ const categories = [
     icon: HeartPulse,
   },
   {
-    title: "Diagnostic Imaging",
-    description: "State-of-the-art MRI, CT, X-Ray, and ultrasound imaging equipment.",
-    image: "/images/product-imaging.png",
-    icon: Shield,
-  },
-  {
     title: "Surgical Instruments",
     description: "Precision surgical tools and instrument sets for all specialties.",
     image: "/images/product-surgical.png",
@@ -171,7 +165,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {categories.map((category, i) => (
               <motion.div
                 key={category.title}
@@ -243,37 +237,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="relative rounded-xl overflow-hidden"
-            {...fadeInUp}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-blue-600" />
-            <div className="relative z-10 px-8 py-16 md:px-16 md:py-20 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground tracking-tight" data-testid="text-cta-title">
-                Ready to Upgrade Your Medical Equipment?
-              </h2>
-              <p className="text-primary-foreground/80 mt-4 max-w-xl mx-auto leading-relaxed">
-                Contact our team today to discuss your requirements and get a customized quote for your healthcare facility.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-                <Link href="/contact">
-                  <Button size="lg" className="bg-white text-gray-900 font-semibold" data-testid="button-cta-contact">
-                    Get a Free Quote
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </Link>
-                <Link href="/products">
-                  <Button size="lg" variant="outline" className="border-white/30 text-white backdrop-blur-sm bg-white/5" data-testid="button-cta-products">
-                    Browse Products
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -6,12 +6,9 @@ import { motion } from "framer-motion";
 import type { Product } from "@shared/schema";
 
 const categoryColors: Record<string, string> = {
-  "Patient Monitoring": "bg-primary/10 text-primary",
-  "Diagnostic Imaging": "bg-accent text-accent-foreground",
-  "Surgical Instruments": "bg-secondary text-secondary-foreground",
-  "Laboratory Equipment": "bg-muted text-muted-foreground",
-  "Respiratory Care": "bg-primary/10 text-primary",
-  "Medical Supplies": "bg-accent text-accent-foreground",
+  "Digital Health": "bg-primary/10 text-primary",
+  "Surgical Equipment": "bg-secondary text-secondary-foreground",
+  "Respiratory Care": "bg-accent text-accent-foreground",
 };
 
 function ProductSkeleton() {
@@ -58,13 +55,13 @@ export default function Products() {
       <section className="py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-6">
           {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array.from({ length: 6 }).map((_, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {Array.from({ length: 4 }).map((_, i) => (
                 <ProductSkeleton key={i} />
               ))}
             </div>
           ) : products && products.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {products.map((product, i) => (
                 <motion.div
                   key={product.id}
