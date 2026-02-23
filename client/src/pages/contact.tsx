@@ -35,7 +35,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
       <section className="relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="relative max-w-7xl mx-auto px-6 py-10 md:py-12">
           <motion.div
             className="max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20">
+      <section className="py-6 md:py-10">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {contactInfo.map((info, i) => (
