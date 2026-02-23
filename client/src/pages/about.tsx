@@ -55,8 +55,9 @@ const milestones = [
 export default function About() {
   return (
     <div className="flex flex-col">
-      <section className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-accent/20" />
+        <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
           <motion.div
             className="max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
@@ -116,8 +117,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-card">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-bl from-primary/8 via-card to-accent/10" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <motion.div {...fadeInUp}>
               <Card className="p-8 h-full">
@@ -210,8 +212,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10" />
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
               Partner With Us

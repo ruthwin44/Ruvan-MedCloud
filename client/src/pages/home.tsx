@@ -208,8 +208,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-card">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-card to-accent/10" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <motion.div className="text-center max-w-2xl mx-auto mb-14" {...fadeInUp}>
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3 tracking-tight" data-testid="text-features-title">
@@ -248,7 +249,7 @@ export default function Home() {
             className="relative rounded-xl overflow-hidden"
             {...fadeInUp}
           >
-            <div className="absolute inset-0 bg-primary" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-blue-600" />
             <div className="relative z-10 px-8 py-16 md:px-16 md:py-20 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground tracking-tight" data-testid="text-cta-title">
                 Ready to Upgrade Your Medical Equipment?

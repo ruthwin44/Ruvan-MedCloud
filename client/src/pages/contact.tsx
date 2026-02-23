@@ -1,26 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactSchema } from "@shared/schema";
-import type { InsertContact } from "@shared/schema";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { z } from "zod";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
@@ -29,84 +9,45 @@ const fadeInUp = {
   transition: { duration: 0.5, ease: "easeOut" },
 };
 
-const contactFormSchema = insertContactSchema.extend({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-  phone: z.string().optional().or(z.literal("")),
-  company: z.string().optional().or(z.literal("")),
-});
-
 const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
     value: "+1 (234) 567-890",
     href: "tel:+1234567890",
+    gradient: "from-blue-500/15 to-cyan-500/15",
+    iconColor: "text-blue-500",
   },
   {
     icon: Mail,
     title: "Email",
     value: "info@ruvanmedcloud.com",
     href: "mailto:info@ruvanmedcloud.com",
+    gradient: "from-violet-500/15 to-purple-500/15",
+    iconColor: "text-violet-500",
   },
   {
     icon: MapPin,
     title: "Address",
     value: "123 Medical Drive, Suite 100\nHealthcare City, HC 10001",
+    gradient: "from-emerald-500/15 to-teal-500/15",
+    iconColor: "text-emerald-500",
   },
   {
     icon: Clock,
     title: "Business Hours",
     value: "Monday - Friday\n8:00 AM - 6:00 PM",
+    gradient: "from-amber-500/15 to-orange-500/15",
+    iconColor: "text-amber-500",
   },
 ];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [submitted, setSubmitted] = useState(false);
-
-  const form = useForm<InsertContact>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    },
-  });
-
-  const mutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      const res = await apiRequest("POST", "/api/contact", data);
-      return res.json();
-    },
-    onSuccess: () => {
-      setSubmitted(true);
-      form.reset();
-      toast({
-        title: "Message Sent",
-        description: "We'll get back to you within 24 hours.",
-      });
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: InsertContact) => {
-    mutation.mutate(data);
-  };
-
   return (
     <div className="flex flex-col">
-      <section className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-accent/20" />
+        <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
           <motion.div
             className="max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
@@ -118,178 +59,72 @@ export default function Contact() {
               Get in Touch With Our Team
             </h1>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-xl">
-              Have questions about our products or need a quote? Our team is ready to help you find the right medical equipment for your facility.
+              Have questions about our products or need a quote? Reach out to us through any of the channels below.
             </p>
           </motion.div>
         </div>
       </section>
 
       <section className="py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-            <motion.div className="lg:col-span-3" {...fadeInUp}>
-              <Card className="p-6 md:p-8">
-                {submitted ? (
-                  <div className="text-center py-12 space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-8 h-8 text-primary" />
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {contactInfo.map((info, i) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className={`p-6 h-full bg-gradient-to-br ${info.gradient}`} data-testid={`card-contact-${info.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 rounded-xl bg-background/80 backdrop-blur-sm flex items-center justify-center flex-shrink-0`}>
+                      <info.icon className={`w-6 h-6 ${info.iconColor}`} />
                     </div>
-                    <h3 className="text-xl font-semibold" data-testid="text-success-title">Thank You!</h3>
-                    <p className="text-muted-foreground max-w-sm mx-auto">
-                      Your message has been sent successfully. Our team will get back to you within 24 hours.
-                    </p>
-                    <Button variant="outline" onClick={() => setSubmitted(false)} data-testid="button-send-another">
-                      Send Another Message
-                    </Button>
+                    <div>
+                      <h3 className="font-semibold text-base mb-1.5">{info.title}</h3>
+                      {info.href ? (
+                        <a
+                          href={info.href}
+                          className="text-sm text-muted-foreground whitespace-pre-line hover:text-foreground transition-colors"
+                          data-testid={`link-contact-${info.title.toLowerCase()}`}
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-muted-foreground whitespace-pre-line">
+                          {info.value}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                ) : (
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                      <h2 className="text-xl font-semibold mb-1">Send Us a Message</h2>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Fill out the form below and we'll respond promptly.
-                      </p>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Full Name *</FormLabel>
-                              <FormControl>
-                                <Input placeholder="John Smith" {...field} data-testid="input-name" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Email Address *</FormLabel>
-                              <FormControl>
-                                <Input type="email" placeholder="john@hospital.com" {...field} data-testid="input-email" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Phone Number</FormLabel>
-                              <FormControl>
-                                <Input type="tel" placeholder="+1 (234) 567-890" {...field} value={field.value ?? ""} data-testid="input-phone" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="company"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Organization</FormLabel>
-                              <FormControl>
-                                <Input placeholder="Hospital / Clinic Name" {...field} value={field.value ?? ""} data-testid="input-company" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Message *</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Tell us about your equipment needs..."
-                                rows={5}
-                                className="resize-none"
-                                {...field}
-                                data-testid="input-message"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <Button
-                        type="submit"
-                        className="w-full sm:w-auto"
-                        disabled={mutation.isPending}
-                        data-testid="button-submit-contact"
-                      >
-                        {mutation.isPending ? (
-                          "Sending..."
-                        ) : (
-                          <>
-                            Send Message
-                            <Send className="w-4 h-4 ml-2" />
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  </Form>
-                )}
-              </Card>
-            </motion.div>
-
-            <motion.div className="lg:col-span-2 space-y-6" {...fadeInUp}>
-              <h2 className="text-xl font-semibold">Contact Information</h2>
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <Card className="p-5" key={info.title} data-testid={`card-contact-${info.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-sm mb-1">{info.title}</h3>
-                        {info.href ? (
-                          <a
-                            href={info.href}
-                            className="text-sm text-muted-foreground whitespace-pre-line"
-                            data-testid={`link-contact-${info.title.toLowerCase()}`}
-                          >
-                            {info.value}
-                          </a>
-                        ) : (
-                          <p className="text-sm text-muted-foreground whitespace-pre-line">
-                            {info.value}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-
-              <Card className="p-5 bg-primary/5 border-primary/10">
-                <h3 className="font-medium text-sm mb-2">Emergency Equipment Support</h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  For urgent equipment issues, our 24/7 technical support line is available.
-                </p>
-                <a href="tel:+1234567899" className="text-sm font-medium text-primary" data-testid="link-emergency-phone">
-                  +1 (234) 567-899 (24/7 Hotline)
-                </a>
-              </Card>
-            </motion.div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            className="mt-10"
+            {...fadeInUp}
+          >
+            <Card className="p-8 bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 border-primary/15">
+              <div className="text-center">
+                <h3 className="font-semibold text-lg mb-2" data-testid="text-emergency-title">Emergency Equipment Support</h3>
+                <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
+                  For urgent equipment issues, our 24/7 technical support line is available around the clock.
+                </p>
+                <a
+                  href="tel:+1234567899"
+                  className="inline-flex items-center gap-2 text-lg font-semibold text-primary"
+                  data-testid="link-emergency-phone"
+                >
+                  <Phone className="w-5 h-5" />
+                  +1 (234) 567-899
+                </a>
+                <p className="text-xs text-muted-foreground mt-1">24/7 Hotline</p>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </section>
     </div>
