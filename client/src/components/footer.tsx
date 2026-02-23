@@ -92,10 +92,7 @@ export function Footer() {
               <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>
-                  NO.10, 12(3479), 1st Floor, 1st Cross,
-                  <br />C Block, Gayathrinagar,
-                  <br />
-                  Bangalore, Karnataka, India - 560021
+                  NO.10, 12(3479), 1st Floor, 1st Cross,<br />C Block, Gayathrinagar,<br />Bangalore, Karnataka, India - 560021
                 </span>
               </div>
               <div className="flex items-start gap-2.5 text-sm text-muted-foreground">
@@ -108,13 +105,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Ruvan Medcloud Pvt Ltd. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Ruvan Medcloud Pvt Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-sm text-muted-foreground">
-              ISO 9001 Certified
-            </span>
+            <span className="text-sm text-muted-foreground">ISO 9001 Certified</span>
           </div>
         </div>
       </div>
