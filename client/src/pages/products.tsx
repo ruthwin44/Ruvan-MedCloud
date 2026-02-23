@@ -13,14 +13,11 @@ const categoryColors: Record<string, string> = {
 
 function ProductSkeleton() {
   return (
-    <Card className="p-0">
-      <Skeleton className="h-52 w-full rounded-t-md rounded-b-none" />
-      <div className="p-5 space-y-3">
-        <Skeleton className="h-4 w-24" />
-        <Skeleton className="h-6 w-3/4" />
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-2/3" />
-      </div>
+    <Card className="p-5 space-y-3">
+      <Skeleton className="h-4 w-24" />
+      <Skeleton className="h-6 w-3/4" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-2/3" />
     </Card>
   );
 }
@@ -70,14 +67,6 @@ export default function Products() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                 >
                   <Card className="group hover-elevate h-full flex flex-col overflow-hidden" data-testid={`card-product-${product.id}`}>
-                    <div className="relative h-52 overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    </div>
                     <div className="p-5 flex flex-col flex-1 bg-gradient-to-b from-card to-card/80">
                       <Badge
                         variant="secondary"
