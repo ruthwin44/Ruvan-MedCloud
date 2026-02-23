@@ -112,7 +112,7 @@ export default function Home() {
               data-testid="text-hero-title"
             >
               Advancing Healthcare Through{" "}
-              <span className="text-blue-400">Premium Equipment</span>
+              <span className="text-orange-400">Premium Equipment</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
               Ruvan Medcloud delivers cutting-edge medical devices and equipment
@@ -232,7 +232,7 @@ export default function Home() {
                       <p className="text-white/75 text-sm leading-relaxed">
                         {category.description}
                       </p>
-                      <div className="flex items-center gap-1.5 mt-3 text-sm font-medium text-blue-300 group-hover:gap-2.5 transition-all">
+                      <div className="flex items-center gap-1.5 mt-3 text-sm font-medium text-orange-300 group-hover:gap-2.5 transition-all">
                         View Products <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
