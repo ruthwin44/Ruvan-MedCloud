@@ -8,22 +8,26 @@ const contactInfo = [
     title: "Phone",
     value: "+91 99453 66616",
     href: "tel:+91994536616",
+    iconColor: "text-blue-500",
   },
   {
     icon: Mail,
     title: "Email",
     value: "ruvanpvtltd@gmail.com",
     href: "mailto:ruvanpvtltd@gmail.com",
+    iconColor: "text-violet-500",
   },
   {
     icon: MapPin,
     title: "Address",
     value: "NO.10, 12(3479), 1st Floor, 1st Cross,\nC Block, Gayathrinagar,\nBangalore, Karnataka, India - 560021",
+    iconColor: "text-emerald-500",
   },
   {
     icon: Clock,
     title: "Business Hours",
     value: "Monday - Saturday\n10:00 AM - 6:00 PM",
+    iconColor: "text-amber-500",
   },
 ];
 
@@ -50,8 +54,8 @@ export default function Contact() {
       </section>
 
       <section className="py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {contactInfo.map((info, i) => (
               <motion.div
                 key={info.title}
@@ -60,25 +64,27 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="p-6 h-full border-orange-300 border-2" data-testid={`card-contact-${info.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <div className="flex flex-col items-center text-center gap-3">
+                <Card className="p-8 h-full border-orange-300 border-2" data-testid={`card-contact-${info.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-orange-500" />
+                      <info.icon className={`w-6 h-6 ${info.iconColor}`} />
                     </div>
-                    <h3 className="font-semibold text-base">{info.title}</h3>
-                    {info.href ? (
-                      <a
-                        href={info.href}
-                        className="text-sm text-muted-foreground whitespace-pre-line hover:text-foreground transition-colors"
-                        data-testid={`link-contact-${info.title.toLowerCase()}`}
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-sm text-muted-foreground whitespace-pre-line">
-                        {info.value}
-                      </p>
-                    )}
+                    <div>
+                      <h3 className="font-semibold text-base mb-1.5">{info.title}</h3>
+                      {info.href ? (
+                        <a
+                          href={info.href}
+                          className="text-sm text-muted-foreground whitespace-pre-line hover:text-foreground transition-colors"
+                          data-testid={`link-contact-${info.title.toLowerCase()}`}
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-muted-foreground whitespace-pre-line">
+                          {info.value}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </Card>
               </motion.div>
