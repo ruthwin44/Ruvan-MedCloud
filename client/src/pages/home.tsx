@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-card to-accent/25" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-card to-orange-50" />
         <div className="relative max-w-7xl mx-auto px-6">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-14"

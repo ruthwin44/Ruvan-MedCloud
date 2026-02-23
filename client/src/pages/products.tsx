@@ -30,7 +30,7 @@ export default function Products() {
   return (
     <div className="flex flex-col">
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-background to-accent/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-background to-orange-50" />
         <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20">
           <motion.div
             className="max-w-2xl"
