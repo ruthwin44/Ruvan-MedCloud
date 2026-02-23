@@ -105,10 +105,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Ruvan Medcloud Pvt Ltd. All rights reserved.
+            Ruvan Medcloud Pvt Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-sm text-muted-foreground">ISO 9001 Certified</span>
+            <span className="text-sm text-muted-foreground">ISO 9001:2015 Certified</span>
           </div>
         </div>
       </div>
