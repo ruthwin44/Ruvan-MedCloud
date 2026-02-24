@@ -1,6 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import anatomographImg from "/images/anatomograph.png";
+import otTableImg from "/images/staan-ot-table-glory.png";
+import discoverLedImg from "/images/staan-discover-led.png";
+import ventilatorImg from "/images/origin-ventilator.png";
 
 const categoryColors: Record<string, string> = {
   "Digital Health": "bg-orange-100 text-gray-900 border-orange-200",
@@ -14,7 +18,7 @@ const products = [
     name: "Anatomograph",
     description: "Advanced AI-powered anatomical visualization platform featuring 3D anatomical atlas, DICOM-based 3D model generation, AI segmentation and analysis, and interactive quiz system for medical education and clinical research.",
     category: "Digital Health",
-    image: "./images/anatomograph.png",
+    image: anatomographImg,
     features: ["3D Anatomical Atlas", "DICOM Viewer", "AI Segmentation", "Medical Education"],
   },
   {
@@ -22,7 +26,7 @@ const products = [
     name: "Staan OT Table Glory",
     description: "Premium hydraulic surgical operating table with electro-hydraulic positioning, radiolucent tabletop, and modular accessories. Designed for multi-specialty surgical procedures with precise height and tilt adjustments.",
     category: "Surgical Equipment",
-    image: "./images/staan-ot-table-glory.png",
+    image: otTableImg,
     features: ["Electro-Hydraulic", "Radiolucent Top", "Multi-Specialty", "Modular Design"],
   },
   {
@@ -30,7 +34,7 @@ const products = [
     name: "Staan Discover LED",
     description: "High-performance surgical LED ceiling light with shadowless illumination, adjustable color temperature, and endoscope mode. Features unique focus technology and ergonomic sterilizable handle for optimal surgical visibility.",
     category: "Surgical Equipment",
-    image: "./images/staan-discover-led.png",
+    image: discoverLedImg,
     features: ["Shadowless LED", "Color Temperature Control", "Endoscope Mode", "Sterilizable Handle"],
   },
   {
@@ -38,7 +42,7 @@ const products = [
     name: "Origin Ventilator",
     description: "Portable life support ventilator for adult and pediatric patients with both invasive and non-invasive ventilation modes. Features intuitive touchscreen interface, comprehensive alarm management, and extended battery life for transport use.",
     category: "Respiratory Care",
-    image: "./images/origin-ventilator.png",
+    image: ventilatorImg,
     features: ["Invasive & Non-Invasive", "Touchscreen Display", "Portable Design", "Extended Battery"],
   },
 ];

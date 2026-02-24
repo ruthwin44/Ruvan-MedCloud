@@ -14,6 +14,10 @@ import {
   Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import heroMedicalImg from "/images/hero-medical.png";
+import anatomographImg from "/images/anatomograph.png";
+import otTableImg from "/images/staan-ot-table-glory.png";
+import ventilatorImg from "/images/origin-ventilator.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
@@ -33,21 +37,21 @@ const categories = [
     title: "Digital Health",
     description:
       "Advanced AI-powered anatomical visualization and medical education platforms.",
-    image: "./images/anatomograph.png",
+    image: anatomographImg,
     icon: Globe,
   },
   {
     title: "Surgical Equipment",
     description:
       "Premium operating tables and surgical LED lights for modern operating rooms.",
-    image: "./images/staan-ot-table-glory.png",
+    image: otTableImg,
     icon: Award,
   },
   {
     title: "Respiratory Care",
     description:
       "Portable life support ventilators for ICU and transport use.",
-    image: "./images/origin-ventilator.png",
+    image: ventilatorImg,
     icon: HeartPulse,
   },
 ];
@@ -90,7 +94,7 @@ export default function Home() {
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="./images/hero-medical.png"
+            src={heroMedicalImg}
             alt="Medical Equipment"
             className="w-full h-full object-cover"
           />

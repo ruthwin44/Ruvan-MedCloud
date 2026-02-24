@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/navigation";
@@ -9,7 +10,7 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function Routes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -23,16 +24,18 @@ function Router() {
 
 function App() {
   return (
-    <TooltipProvider>
-      <div className="flex flex-col min-h-screen">
-        <Navigation />
-        <main className="flex-1">
-          <Router />
-        </main>
-        <Footer />
-      </div>
-      <Toaster />
-    </TooltipProvider>
+    <Router hook={useHashLocation}>
+      <TooltipProvider>
+        <div className="flex flex-col min-h-screen">
+          <Navigation />
+          <main className="flex-1">
+            <Routes />
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
+      </TooltipProvider>
+    </Router>
   );
 }
 
