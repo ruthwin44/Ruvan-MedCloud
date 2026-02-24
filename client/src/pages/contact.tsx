@@ -29,7 +29,7 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50/60 via-white to-orange-100/40">
       <section className="relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 py-10 md:py-12">
           <motion.div
@@ -61,9 +61,8 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative group"
               >
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-orange-300 via-orange-400 to-orange-500 opacity-30 blur-lg group-hover:opacity-50 transition-opacity duration-300" />
                 <Card
-                  className="relative p-8 h-full border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/40 shadow-[0_8px_30px_rgba(249,115,22,0.12),_0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(249,115,22,0.2),_0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-all duration-300"
+                  className="p-8 h-full border-orange-200/50 bg-white/80 backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
                   data-testid={`card-contact-${info.title.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   <div className="flex items-start gap-4">
