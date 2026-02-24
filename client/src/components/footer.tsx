@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logoImage from "@assets/RuvanMedcloud_Logo_1771860290852.png";
 
 export function Footer() {
   return (
@@ -104,9 +105,12 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            Ruvan Medcloud Pvt Ltd. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <img src={logoImage} alt="Ruvan Medcloud" className="h-12 w-auto" />
+            <p className="text-sm text-muted-foreground">
+              Ruvan Medcloud Pvt Ltd. All rights reserved.
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <span className="text-sm text-muted-foreground">ISO 9001:2015 Certified</span>
           </div>

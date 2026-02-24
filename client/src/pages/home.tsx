@@ -30,25 +30,25 @@ const staggerContainer = {
 
 const categories = [
   {
-    title: "Patient Monitoring",
+    title: "Digital Health",
     description:
-      "Advanced vital signs monitoring systems for ICU, OR, and general wards.",
-    image: "/images/product-monitoring.png",
-    icon: HeartPulse,
+      "Advanced AI-powered anatomical visualization and medical education platforms.",
+    image: "/images/anatomograph.png",
+    icon: Globe,
   },
   {
-    title: "Surgical Instruments",
+    title: "Surgical Equipment",
     description:
-      "Precision surgical tools and instrument sets for all specialties.",
-    image: "/images/product-surgical.png",
+      "Premium operating tables and surgical LED lights for modern operating rooms.",
+    image: "/images/staan-ot-table-glory.png",
     icon: Award,
   },
   {
-    title: "Laboratory Equipment",
+    title: "Respiratory Care",
     description:
-      "Automated analyzers and diagnostic equipment for clinical labs.",
-    image: "/images/product-laboratory.png",
-    icon: Package,
+      "Portable life support ventilators for ICU and transport use.",
+    image: "/images/origin-ventilator.png",
+    icon: HeartPulse,
   },
 ];
 

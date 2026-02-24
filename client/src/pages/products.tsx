@@ -75,6 +75,15 @@ export default function Products() {
                     className="group hover-elevate h-full flex flex-col overflow-hidden"
                     data-testid={`card-product-${product.id}`}
                   >
+                    {product.image && (
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
                     <div className="p-5 flex flex-col flex-1 bg-gradient-to-b from-card to-card/80">
                       <Badge
                         variant="secondary"
