@@ -8,7 +8,13 @@ vite.config.ts.*
 .env.*
 *.log
 .replit
+.replit (copy)
 replit.nix
 .config/
 .local/
 .cache/
+attached_assets/
+*.pyc
+__pycache__/
+.uv/
+uv.lock
