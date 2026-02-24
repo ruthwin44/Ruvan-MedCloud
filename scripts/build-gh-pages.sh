@@ -12,6 +12,8 @@ rm -rf docs/*
 
 cp -r dist/public/* docs/
 
+sed -i 's|href="favicon.png"|href="/'"$REPO_NAME"'/favicon.png"|g' docs/index.html
+
 touch docs/.nojekyll
 
 cat > docs/404.html << HEREDOC
