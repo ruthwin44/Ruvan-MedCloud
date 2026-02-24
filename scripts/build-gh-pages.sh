@@ -1,20 +1,20 @@
 #!/bin/bash
 set -e
 
-REPO_NAME="Ruvan-MedCloud"
+CUSTOM_DOMAIN="www.ruvanmedcloud.com"
 
-echo "Building static site for GitHub Pages (base: /$REPO_NAME/)..."
+echo "Building static site for GitHub Pages (custom domain: $CUSTOM_DOMAIN)..."
 
-npx vite build --base="/$REPO_NAME/"
+npx vite build --base="/"
 
 mkdir -p docs
 rm -rf docs/*
 
 cp -r dist/public/* docs/
 
-sed -i 's|href="favicon.png"|href="/'"$REPO_NAME"'/favicon.png"|g' docs/index.html
-
 touch docs/.nojekyll
+
+echo "$CUSTOM_DOMAIN" > docs/CNAME
 
 cat > docs/404.html << HEREDOC
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ cat > docs/404.html << HEREDOC
   <meta charset="utf-8">
   <title>RUVAN MEDCLOUD</title>
   <script>
-    var pathSegmentsToKeep = 1;
+    var pathSegmentsToKeep = 0;
     var l = window.location;
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
@@ -40,11 +40,4 @@ HEREDOC
 
 echo "Build complete! Static site is in the 'docs/' folder."
 echo ""
-echo "To deploy on GitHub Pages:"
-echo "1. Push the 'docs/' folder to your GitHub repository"
-echo "2. Go to Settings > Pages in your repository"
-echo "3. Set Source to 'Deploy from a branch'"
-echo "4. Set Branch to 'main' and folder to '/docs'"
-echo "5. Click Save"
-echo ""
-echo "Your site will be at: https://ruthwin44.github.io/$REPO_NAME/"
+echo "Your site will be at: https://$CUSTOM_DOMAIN/"
