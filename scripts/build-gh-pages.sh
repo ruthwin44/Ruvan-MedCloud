@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CUSTOM_DOMAIN="www.ruvanmedcloud.com"
+CUSTOM_DOMAIN="www.ruvanmedcloud.in"
 
 echo "Building static site for GitHub Pages (custom domain: $CUSTOM_DOMAIN)..."
 
