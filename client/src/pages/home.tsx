@@ -33,21 +33,21 @@ const categories = [
     title: "Digital Health",
     description:
       "Advanced AI-powered anatomical visualization and medical education platforms.",
-    image: "/images/anatomograph.png",
+    image: "./images/anatomograph.png",
     icon: Globe,
   },
   {
     title: "Surgical Equipment",
     description:
       "Premium operating tables and surgical LED lights for modern operating rooms.",
-    image: "/images/staan-ot-table-glory.png",
+    image: "./images/staan-ot-table-glory.png",
     icon: Award,
   },
   {
     title: "Respiratory Care",
     description:
       "Portable life support ventilators for ICU and transport use.",
-    image: "/images/origin-ventilator.png",
+    image: "./images/origin-ventilator.png",
     icon: HeartPulse,
   },
 ];
@@ -90,7 +90,7 @@ export default function Home() {
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-medical.png"
+            src="./images/hero-medical.png"
             alt="Medical Equipment"
             className="w-full h-full object-cover"
           />
